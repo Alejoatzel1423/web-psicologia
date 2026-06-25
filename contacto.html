@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | PsicoVida Colombia</title>
+  <meta name="description" content="Contáctanos para agendar tu consulta psicológica en Colombia. WhatsApp, formulario web o llamada.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+</head>
+<body>
+  <header class="header"> <div class="container header__inner"> <a href="index.html" class="logo">Psico<span>Vida</span></a> <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button> <nav class="nav" id="mainNav"> <ul class="nav__list"> <li><a href="index.html#servicios">Servicios</a></li> <li><a href="sobre-mi.html">Sobre mí</a></li> <li><a href="blog/">Blog</a></li> <li><a href="contacto.html">Contacto</a></li> </ul> </nav> </div> </header>
+
+  <main>
+    <section class="section" style="padding-top:100px">
+      <div class="container" style="max-width:700px">
+        <h1 class="section__title">Contacto</h1>
+        <p class="section__subtitle">Estoy aquí para escucharte. Elige el canal que prefieras.</p>
+
+        <!-- WhatsApp directo -->
+        <div class="card" style="text-align:center;margin-bottom:24px;background:var(--bg-alt)">
+          <p style="font-size:3rem;margin-bottom:8px">💬</p>
+          <h3 style="font-size:1.3rem;color:var(--primary-dark);margin-bottom:8px">Escríbeme por WhatsApp</h3>
+          <p style="color:var(--text-light);margin-bottom:20px">Respuesta en menos de 24 horas</p>
+          <a href="https://wa.me/573000000000?text=Hola%2C%20quiero%20agendar%20una%20consulta%20psicol%C3%B3gica" class="btn btn--primary btn--large" target="_blank" rel="noopener">📱 Enviar WhatsApp</a>
+        </div>
+
+        <!-- Formulario -->
+        <div class="card">
+          <h3 style="font-size:1.2rem;color:var(--primary-dark);margin-bottom:20px">📝 O déjame tus datos</h3>
+          <form action="https://formspree.io/f/xtodoformulario" method="POST" style="display:flex;flex-direction:column;gap:16px">
+            <div>
+              <label for="nombre" style="display:block;margin-bottom:4px;font-weight:600;font-size:0.95rem">Nombre completo</label>
+              <input type="text" id="nombre" name="nombre" required style="width:100%;padding:12px 16px;border:2px solid #ddd;border-radius:8px;font-size:1rem;transition:border-color 0.3s" placeholder="Ej: María Pérez">
+            </div>
+            <div>
+              <label for="telefono" style="display:block;margin-bottom:4px;font-weight:600;font-size:0.95rem">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" required style="width:100%;padding:12px 16px;border:2px solid #ddd;border-radius:8px;font-size:1rem" placeholder="Ej: 300 123 4567">
+            </div>
+            <div>
+              <label for="servicio" style="display:block;margin-bottom:4px;font-weight:600;font-size:0.95rem">Servicio de interés</label>
+              <select id="servicio" name="servicio" required style="width:100%;padding:12px 16px;border:2px solid #ddd;border-radius:8px;font-size:1rem;background:var(--white)">
+                <option value="">Selecciona un servicio...</option>
+                <option value="consulta-individual">Consulta individual</option>
+                <option value="consulta-pareja">Consulta de pareja</option>
+                <option value="consulta-infantil">Consulta infantil/adolescente</option>
+                <option value="taller">Taller</option>
+                <option value="seminario">Seminario empresarial</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+            <div>
+              <label for="mensaje" style="display:block;margin-bottom:4px;font-weight:600;font-size:0.95rem">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" rows="4" required style="width:100%;padding:12px 16px;border:2px solid #ddd;border-radius:8px;font-size:1rem;resize:vertical" placeholder="Cuéntame en qué puedo ayudarte..."></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--large" style="width:100%">📩 Enviar mensaje</button>
+          </form>
+        </div>
+
+        <!-- Info adicional -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px;text-align:center;font-size:0.95rem">
+          <div class="card" style="padding:20px">
+            <p style="font-size:1.5rem">📍</p>
+            <p style="font-weight:600">Bogotá, Colombia</p>
+            <p style="color:var(--text-light)">Consultas presenciales</p>
+          </div>
+          <div class="card" style="padding:20px">
+            <p style="font-size:1.5rem">🌐</p>
+            <p style="font-weight:600">Online</p>
+            <p style="color:var(--text-light)">En toda Colombia</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__info"> <p class="footer__logo">Psico<span>Vida</span> Colombia</p> <p>📍 Bogotá, Colombia</p> <p>📞 <a href="https://wa.me/573000000000">+57 300 000 0000</a></p> <p>📧 contacto@psicovidacolombia.com</p> </div>
+      <div class="footer__links"> <h4>Servicios</h4> <ul> <li><a href="servicios.html#consultas">Consultas</a></li> <li><a href="servicios.html#talleres">Talleres</a></li> <li><a href="servicios.html#seminarios">Seminarios</a></li> </ul> </div>
+      <div class="footer__links"> <h4>Enlaces</h4> <ul> <li><a href="sobre-mi.html">Sobre mí</a></li> <li><a href="blog/">Blog</a></li> <li><a href="contacto.html">Contacto</a></li> </ul> </div>
+      <div class="footer__bottom"> <p>© 2026 PsicoVida Colombia. Todos los derechos reservados.</p> </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/573000000000?text=Hola%2C%20quiero%20agendar%20una%20consulta%20psicol%C3%B3gica" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+  <script src="js/main.js"></script>
+</body>
+</html>
