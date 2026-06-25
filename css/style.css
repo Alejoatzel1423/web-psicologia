@@ -8,13 +8,13 @@
 /* --- VARIABLES --- */
 :root {
   /* Brand */
-  --primary: #2D6A4F;
-  --primary-dark: #1B4332;
-  --primary-soft: rgba(45, 106, 79, 0.06);
-  --primary-dim: rgba(45, 106, 79, 0.12);
-  --primary-light: #95D5B2;
-  --accent: #F4A261;
-  --accent-dark: #E76F51;
+  --primary: #6600FF;
+  --primary-dark: #4B00BF;
+  --primary-soft: rgba(102, 0, 255, 0.06);
+  --primary-dim: rgba(102, 0, 255, 0.12);
+  --primary-light: #B388FF;
+  --accent: #00E5FF;
+  --accent-dark: #00B8D4;
   --whatsapp: #25D366;
   --whatsapp-shadow: rgba(37, 211, 102, 0.3);
 
@@ -156,7 +156,7 @@ p { font-size: 16px; line-height: 1.6; color: var(--on-surface-variant); }
 .btn--primary:hover {
   background: var(--primary-dark);
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(45,106,79,0.3);
+  box-shadow: 0 4px 16px rgba(102,0,255,0.3);
   color: #fff;
 }
 .btn--whatsapp { background: var(--whatsapp); color: #fff; }
