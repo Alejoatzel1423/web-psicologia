@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html lang="es-CO">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre mí | PsicoVida Colombia</title>
-  <meta name="description" content="Conoce al profesional detrás de PsicoVida Colombia. Psicóloga con más de 10 años de experiencia en bienestar emocional.">
+  <title>Sobre Mí — PsicoVida Colombia</title>
+  <meta name="description" content="Conoce a tu psicóloga. Formación profesional, enfoque terapéutico y experiencia en salud mental en Colombia.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>💚</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/p5.min.js"></script>
 </head>
 <body>
-  <header class="header"> <div class="container header__inner"> <a href="index.html" class="logo">Psico<span>Vida</span></a> <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button> <nav class="nav" id="mainNav"> <ul class="nav__list"> <li><a href="index.html#servicios">Servicios</a></li> <li><a href="sobre-mi.html">Sobre mí</a></li> <li><a href="blog/">Blog</a></li> <li><a href="contacto.html">Contacto</a></li> </ul> </nav> </div> </header>
+  <div id="p5-bg"></div>
 
   <main>
     <section class="section" style="padding-top:100px">
@@ -65,15 +70,69 @@
   </main>
 
   <footer class="footer">
-    <div class="container footer__inner">
-      <div class="footer__info"> <p class="footer__logo">Psico<span>Vida</span> Colombia</p> <p>📍 Bogotá, Colombia</p> <p>📞 <a href="https://wa.me/573000000000">+57 300 000 0000</a></p> <p>📧 contacto@psicovidacolombia.com</p> </div>
-      <div class="footer__links"> <h4>Servicios</h4> <ul> <li><a href="servicios.html#consultas">Consultas</a></li> <li><a href="servicios.html#talleres">Talleres</a></li> <li><a href="servicios.html#seminarios">Seminarios</a></li> </ul> </div>
-      <div class="footer__links"> <h4>Enlaces</h4> <ul> <li><a href="sobre-mi.html">Sobre mí</a></li> <li><a href="blog/">Blog</a></li> <li><a href="contacto.html">Contacto</a></li> </ul> </div>
-      <div class="footer__bottom"> <p>© 2026 PsicoVida Colombia. Todos los derechos reservados.</p> </div>
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <h4>PsicoVida Colombia</h4>
+          <ul>
+            <li>📍 Bogotá, Colombia</li>
+            <li>📞 <a href="https://wa.me/573000000000">+57 300 000 0000</a></li>
+            <li>📧 contacto@psicovidacolombia.com</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Servicios</h4>
+          <ul>
+            <li><a href="servicios.html#consultas">Consultas</a></li>
+            <li><a href="servicios.html#talleres">Talleres</a></li>
+            <li><a href="servicios.html#seminarios">Seminarios</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Enlaces</h4>
+          <ul>
+            <li><a href="sobre-mi.html">Sobre mí</a></li>
+            <li><a href="blog/">Blog</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 PsicoVida Colombia. Todos los derechos reservados.</p>
+      </div>
     </div>
   </footer>
 
   <a href="https://wa.me/573000000000?text=Hola%2C%20quiero%20agendar%20una%20consulta%20psicol%C3%B3gica" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
   <script src="js/main.js"></script>
+  <script>
+  new p5((p) => {
+    let particles = [];
+    p.setup = function() {
+      let canvas = p.createCanvas(p.windowWidth, p.windowHeight);
+      canvas.parent('p5-bg');
+      p.colorMode(p.RGB, 255);
+      p.noStroke();
+      for (let i = 0; i < 40; i++) {
+        particles.push({ x: p.random(p.width), y: p.random(p.height), vx: 0, vy: 0, size: p.random(2, 4), alpha: p.random(0.02, 0.06) });
+      }
+    };
+    p.draw = function() {
+      p.clear();
+      let t = p.frameCount * 0.0005;
+      for (let pt of particles) {
+        let angle = p.noise(pt.x * 0.005, pt.y * 0.005, t) * p.TWO_PI * 2;
+        pt.vx += p.cos(angle) * 0.08; pt.vy += p.sin(angle) * 0.08;
+        pt.vx *= 0.96; pt.vy *= 0.96;
+        pt.x += pt.vx; pt.y += pt.vy;
+        if (pt.x < 0) pt.x = p.width; if (pt.x > p.width) pt.x = 0;
+        if (pt.y < 0) pt.y = p.height; if (pt.y > p.height) pt.y = 0;
+        p.fill(45, 106, 79, pt.alpha * 255);
+        p.circle(pt.x, pt.y, pt.size);
+      }
+    };
+    p.windowResized = function() { p.resizeCanvas(p.windowWidth, p.windowHeight); };
+  }, 'p5-bg');
+  </script>
 </body>
 </html>

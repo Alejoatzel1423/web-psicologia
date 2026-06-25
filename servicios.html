@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html lang="es-CO">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Servicios de Psicología en Colombia | PsicoVida</title>
+  <title>Servicios — PsicoVida Colombia</title>
   <meta name="description" content="Consultas psicológicas individuales y de pareja, talleres de crecimiento personal y seminarios empresariales en Colombia. Presencial y online.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>💚</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/p5.min.js"></script>
 </head>
 <body>
+  <div id="p5-bg"></div>
   <header class="header"> <div class="container header__inner"> <a href="index.html" class="logo">Psico<span>Vida</span></a> <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button> <nav class="nav" id="mainNav"> <ul class="nav__list"> <li><a href="index.html#servicios">Servicios</a></li> <li><a href="sobre-mi.html">Sobre mí</a></li> <li><a href="blog/">Blog</a></li> <li><a href="contacto.html">Contacto</a></li> </ul> </nav> </div> </header>
 
   <main>
@@ -17,69 +23,65 @@
         <h1 class="section__title">Nuestros Servicios</h1>
         <p class="section__subtitle">Encuentra el apoyo que necesitas</p>
 
-        <!-- Consultas -->
-        <div id="consultas" style="padding-top:64px;margin-top:-64px">
-          <h2 style="font-size:1.5rem;color:var(--primary-dark);margin:32px 0 16px;display:flex;align-items:center;gap:12px"><span style="font-size:2rem">💬</span> Consultas Psicológicas</h2>
-          <div class="card" style="margin-bottom:24px">
-            <p style="margin-bottom:16px;color:var(--text-light)">Atención profesional y confidencial para individuos, parejas y familias. Cada proceso es único y adaptado a tus necesidades.</p>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;font-size:0.95rem">
-              <div><strong>Duración:</strong> 50 min por sesión</div>
-              <div><strong>Modalidad:</strong> Presencial / Online</div>
-              <div><strong>Frecuencia:</strong> Semanal o quincenal</div>
-              <div><strong>Primera sesión:</strong> Gratuita</div>
+        <div class="service-detail">
+          <div class="service-item" id="consultas">
+            <span class="card__icon">💬</span>
+            <h2>Consultas Psicológicas</h2>
+            <p>Atención profesional y confidencial para individuos, parejas y familias. Cada proceso es único y adaptado a tus necesidades.</p>
+            <div class="service-tags">
+              <span class="tag">50 min por sesión</span>
+              <span class="tag">Presencial / Online</span>
+              <span class="tag">Semanal o quincenal</span>
+              <span class="tag">Primera sesión gratuita</span>
             </div>
-            <h3 style="font-size:1.1rem;margin-bottom:12px;color:var(--primary-dark)">Tipos de consulta:</h3>
-            <ul style="margin-bottom:20px">
-              <li style="padding:6px 0;border-bottom:1px solid var(--bg)"><strong>Individual:</strong> Para trabajar en tus emociones, pensamientos y conductas.</li>
-              <li style="padding:6px 0;border-bottom:1px solid var(--bg)"><strong>Pareja:</strong> Mejora la comunicación y fortalece el vínculo.</li>
-              <li style="padding:6px 0;border-bottom:1px solid var(--bg)"><strong>Infantil y adolescente:</strong> Acompañamiento en el desarrollo emocional.</li>
-              <li style="padding:6px 0"><strong>Online:</strong> Desde cualquier lugar de Colombia, por videollamada.</li>
+            <h3>Tipos de consulta:</h3>
+            <ul class="card__list">
+              <li><strong>Individual:</strong> Para trabajar en tus emociones, pensamientos y conductas.</li>
+              <li><strong>Pareja:</strong> Mejora la comunicación y fortalece el vínculo.</li>
+              <li><strong>Infantil y adolescente:</strong> Acompañamiento en el desarrollo emocional.</li>
+              <li><strong>Online:</strong> Desde cualquier lugar de Colombia, por videollamada.</li>
             </ul>
-            <a href="https://wa.me/573000000000?text=Hola%2C%20quiero%20agendar%20una%20consulta%20psicol%C3%B3gica" class="btn btn--primary" target="_blank" rel="noopener">📱 Agendar consulta</a>
+            <a href="https://wa.me/573000000000?text=Hola%2C%20quiero%20agendar%20una%20consulta%20psicol%C3%B3gica" class="btn btn--whatsapp" target="_blank" rel="noopener">📱 Agendar consulta</a>
           </div>
-        </div>
 
-        <!-- Talleres -->
-        <div id="talleres" style="padding-top:64px;margin-top:-64px">
-          <h2 style="font-size:1.5rem;color:var(--primary-dark);margin:32px 0 16px;display:flex;align-items:center;gap:12px"><span style="font-size:2rem">🧘</span> Talleres</h2>
-          <div class="card" style="margin-bottom:24px">
-            <p style="margin-bottom:16px;color:var(--text-light)">Talleres grupales e individuales para desarrollar habilidades emocionales y mejorar tu calidad de vida.</p>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;font-size:0.95rem">
-              <div><strong>Duración:</strong> 2-4 horas</div>
-              <div><strong>Modalidad:</strong> Presencial / Online</div>
-              <div><strong>Grupos:</strong> Máximo 15 personas</div>
-              <div><strong>Incluye:</strong> Material digital</div>
+          <div class="service-item" id="talleres">
+            <span class="card__icon">🧘</span>
+            <h2>Talleres</h2>
+            <p>Talleres grupales e individuales para desarrollar habilidades emocionales y mejorar tu calidad de vida.</p>
+            <div class="service-tags">
+              <span class="tag">2-4 horas</span>
+              <span class="tag">Presencial / Online</span>
+              <span class="tag">Máximo 15 personas</span>
+              <span class="tag">Material digital incluido</span>
             </div>
-            <h3 style="font-size:1.1rem;margin-bottom:12px;color:var(--primary-dark)">Talleres disponibles:</h3>
-            <ul style="margin-bottom:20px">
-              <li style="padding:6px 0;border-bottom:1px solid var(--bg)"><strong>Manejo de ansiedad y estrés:</strong> Técnicas prácticas para el día a día.</li>
-              <li style="padding:6px 0;border-bottom:1px solid var(--bg)"><strong>Autoestima y confianza:</strong> Reconecta con tu valor personal.</li>
-              <li style="padding:6px 0;border-bottom:1px solid var(--bg)"><strong>Habilidades sociales:</strong> Comunicación asertiva y relaciones sanas.</li>
-              <li style="padding:6px 0"><strong>Inteligencia emocional:</strong> Gestiona tus emociones de forma efectiva.</li>
+            <h3>Talleres disponibles:</h3>
+            <ul class="card__list">
+              <li><strong>Manejo de ansiedad y estrés:</strong> Técnicas prácticas para el día a día.</li>
+              <li><strong>Autoestima y confianza:</strong> Reconecta con tu valor personal.</li>
+              <li><strong>Habilidades sociales:</strong> Comunicación asertiva y relaciones sanas.</li>
+              <li><strong>Inteligencia emocional:</strong> Gestiona tus emociones de forma efectiva.</li>
             </ul>
-            <a href="https://wa.me/573000000000?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20talleres" class="btn btn--secondary" target="_blank" rel="noopener">📱 Más información</a>
+            <a href="https://wa.me/573000000000?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20talleres" class="btn btn--primary" target="_blank" rel="noopener">📱 Más información</a>
           </div>
-        </div>
 
-        <!-- Seminarios -->
-        <div id="seminarios" style="padding-top:64px;margin-top:-64px">
-          <h2 style="font-size:1.5rem;color:var(--primary-dark);margin:32px 0 16px;display:flex;align-items:center;gap:12px"><span style="font-size:2rem">🏢</span> Seminarios Empresariales</h2>
-          <div class="card">
-            <p style="margin-bottom:16px;color:var(--text-light)">Programas diseñados para empresas colombianas que quieren invertir en la salud mental de sus colaboradores. Cubrimos desplazamiento a toda Colombia.</p>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px;font-size:0.95rem">
-              <div><strong>Duración:</strong> 4-8 horas</div>
-              <div><strong>Modalidad:</strong> Presencial / Online</div>
-              <div><strong>Grupos:</strong> Desde 10 personas</div>
-              <div><strong>Cobertura:</strong> Toda Colombia</div>
+          <div class="service-item" id="seminarios">
+            <span class="card__icon">🏢</span>
+            <h2>Seminarios Empresariales</h2>
+            <p>Programas diseñados para empresas colombianas que quieren invertir en la salud mental de sus colaboradores. Cubrimos desplazamiento a toda Colombia.</p>
+            <div class="service-tags">
+              <span class="tag">4-8 horas</span>
+              <span class="tag">Presencial / Online</span>
+              <span class="tag">Desde 10 personas</span>
+              <span class="tag">Cobertura toda Colombia</span>
             </div>
-            <h3 style="font-size:1.1rem;margin-bottom:12px;color:var(--primary-dark)">Temas:</h3>
-            <ul style="margin-bottom:20px">
-              <li style="padding:6px 0;border-bottom:1px solid var(--bg)"><strong>Clima laboral y cultura organizacional</strong></li>
-              <li style="padding:6px 0;border-bottom:1px solid var(--bg)"><strong>Liderazgo consciente y empático</strong></li>
-              <li style="padding:6px 0;border-bottom:1px solid var(--bg)"><strong>Manejo del estrés laboral y prevención del burnout</strong></li>
-              <li style="padding:6px 0"><strong>Salud mental organizacional</strong></li>
+            <h3>Temas:</h3>
+            <ul class="card__list">
+              <li><strong>Clima laboral y cultura organizacional</strong></li>
+              <li><strong>Liderazgo consciente y empático</strong></li>
+              <li><strong>Manejo del estrés laboral y prevención del burnout</strong></li>
+              <li><strong>Salud mental organizacional</strong></li>
             </ul>
-            <a href="https://wa.me/573000000000?text=Hola%2C%20quiero%20cotizar%20un%20seminario%20para%20mi%20empresa" class="btn btn--primary" target="_blank" rel="noopener">📱 Solicitar cotización</a>
+            <a href="https://wa.me/573000000000?text=Hola%2C%20quiero%20cotizar%20un%20seminario%20para%20mi%20empresa" class="btn btn--whatsapp" target="_blank" rel="noopener">📱 Solicitar cotización</a>
           </div>
         </div>
       </div>
@@ -87,17 +89,70 @@
   </main>
 
   <footer class="footer">
-    <div class="container footer__inner">
-      <div class="footer__info"> <p class="footer__logo">Psico<span>Vida</span> Colombia</p> <p>📍 Bogotá, Colombia</p> <p>📞 <a href="https://wa.me/573000000000">+57 300 000 0000</a></p> <p>📧 contacto@psicovidacolombia.com</p> </div>
-      <div class="footer__links"> <h4>Servicios</h4> <ul> <li><a href="#consultas">Consultas</a></li> <li><a href="#talleres">Talleres</a></li> <li><a href="#seminarios">Seminarios</a></li> </ul> </div>
-      <div class="footer__links"> <h4>Enlaces</h4> <ul> <li><a href="sobre-mi.html">Sobre mí</a></li> <li><a href="blog/">Blog</a></li> <li><a href="contacto.html">Contacto</a></li> </ul> </div>
-      <div class="footer__bottom"> <p>© 2026 PsicoVida Colombia. Todos los derechos reservados.</p> </div>
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <h4>PsicoVida Colombia</h4>
+          <ul>
+            <li>📍 Bogotá, Colombia</li>
+            <li>📞 <a href="https://wa.me/573000000000">+57 300 000 0000</a></li>
+            <li>📧 contacto@psicovidacolombia.com</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Servicios</h4>
+          <ul>
+            <li><a href="#consultas">Consultas</a></li>
+            <li><a href="#talleres">Talleres</a></li>
+            <li><a href="#seminarios">Seminarios</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Enlaces</h4>
+          <ul>
+            <li><a href="sobre-mi.html">Sobre mí</a></li>
+            <li><a href="blog/">Blog</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 PsicoVida Colombia. Todos los derechos reservados.</p>
+      </div>
     </div>
   </footer>
 
-  <a href="https://wa.me/573000000000?text=Hola%2C%20quiero%20agendar%20una%20consulta%20psicol%C3%B3gica"
-     class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+  <a href="https://wa.me/573000000000?text=Hola%2C%20quiero%20agendar%20una%20consulta%20psicol%C3%B3gica" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
 
   <script src="js/main.js"></script>
+  <script>
+  new p5((p) => {
+    let particles = [];
+    p.setup = function() {
+      let canvas = p.createCanvas(p.windowWidth, p.windowHeight);
+      canvas.parent('p5-bg');
+      p.colorMode(p.RGB, 255);
+      p.noStroke();
+      for (let i = 0; i < 40; i++) {
+        particles.push({ x: p.random(p.width), y: p.random(p.height), vx: 0, vy: 0, size: p.random(2, 4), alpha: p.random(0.02, 0.06) });
+      }
+    };
+    p.draw = function() {
+      p.clear();
+      let t = p.frameCount * 0.0005;
+      for (let pt of particles) {
+        let angle = p.noise(pt.x * 0.005, pt.y * 0.005, t) * p.TWO_PI * 2;
+        pt.vx += p.cos(angle) * 0.08; pt.vy += p.sin(angle) * 0.08;
+        pt.vx *= 0.96; pt.vy *= 0.96;
+        pt.x += pt.vx; pt.y += pt.vy;
+        if (pt.x < 0) pt.x = p.width; if (pt.x > p.width) pt.x = 0;
+        if (pt.y < 0) pt.y = p.height; if (pt.y > p.height) pt.y = 0;
+        p.fill(45, 106, 79, pt.alpha * 255);
+        p.circle(pt.x, pt.y, pt.size);
+      }
+    };
+    p.windowResized = function() { p.resizeCanvas(p.windowWidth, p.windowHeight); };
+  }, 'p5-bg');
+  </script>
 </body>
 </html>
