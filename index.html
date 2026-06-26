@@ -1,245 +1,247 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PsicoVida Colombia — Consultas, Talleres y Seminarios</title>
-  <meta name="description" content="Servicios psicológicos profesionales en Colombia. Consultas individuales y de pareja, talleres de crecimiento personal y seminarios empresariales.">
-  <meta property="og:title" content="PsicoVida Colombia — Tu bienestar emocional">
-  <meta property="og:description" content="Psicología profesional en Colombia. Agenda tu consulta hoy.">
-  <meta property="og:type" content="website">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>💚</text></svg>">
+  <title>PsicoVida Colombia — Tu Bienestar Emocional</title>
+  <meta name="description" content="Consultas psicológicas, talleres y seminarios en Colombia. Atención profesional online y presencial.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/css/splide.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="css/style.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/p5.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <body>
-  <div id="p5-bg"></div>
-  <header class="header">
-    <div class="container header__inner">
-      <a href="/" class="logo">Psico<span>Vida</span></a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
-      <nav class="nav" id="mainNav">
-        <ul class="nav__list">
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="sobre-mi.html">Sobre mí</a></li>
-          <li><a href="blog/">Blog</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-      </nav>
+  <div id="three-canvas"></div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="container text-center">
+      <p class="text-uppercase mb-3" style="letter-spacing:6px;font-size:0.8rem;color:var(--cyan);">
+        🧠 Psicología Profesional en Colombia
+      </p>
+      <h1 class="gsap-title">
+        <span class="d-block">Tu salud mental</span>
+        <span class="d-block gradient-text">importa</span>
+      </h1>
+      <p class="mx-auto" style="max-width:600px;color:rgba(255,255,255,0.6);font-size:1.1rem;margin-bottom:2rem;">
+        Consulta con psicólogos colegiados desde la comodidad de tu hogar o en nuestro consultorio en Bogotá.
+        <strong style="color:var(--cyan);">Primera sesión gratuita.</strong>
+      </p>
+      <div class="d-flex gap-3 justify-content-center flex-wrap">
+        <a href="https://wa.me/573000000000?text=Hola%2C%20quiero%20agendar%20mi%20primera%20consulta" class="glow-btn glow-btn--primary" target="_blank">
+          💬 Agenda tu consulta
+        </a>
+        <a href="#servicios" class="glow-btn glow-btn--secondary">
+          Ver servicios
+        </a>
+      </div>
     </div>
-  </header>
+    <div class="scroll-indicator">
+      <div class="mouse"></div>
+      <span>Conoce más</span>
+    </div>
+  </section>
 
-  <main>
-    <!-- Hero -->
-    <section class="hero" id="inicio">
-      <div class="container">
-        <h1 class="hero__title">Tu bienestar emocional<br><span>es nuestra prioridad</span></h1>
-        <p class="hero__subtitle">Acompañamiento psicológico profesional en Colombia. Presencial y online.</p>
-        <a href="https://wa.me/573000000000?text=Hola%2C%20quiero%20agendar%20una%20consulta%20psicol%C3%B3gica" class="btn btn--primary" target="_blank" rel="noopener">
-          📱 Agenda tu consulta
-        </a>
-      </div>
-    </section>
+  <!-- ===== STATS ===== -->
+  <section class="section" data-aos="fade-up">
+    <div class="stats-grid">
+      <div class="stat-card"> <div class="stat-number countup" data-target="1500">0</div> <div class="stat-label">Pacientes atendidos</div> </div>
+      <div class="stat-card"> <div class="stat-number countup" data-target="98">0</div> <div class="stat-label">% Satisfacción</div> </div>
+      <div class="stat-card"> <div class="stat-number" data-target="12">12+</div> <div class="stat-label">Años de experiencia</div> </div>
+      <div class="stat-card"> <div class="stat-number" data-target="3">3</div> <div class="stat-label">Sedes en Colombia</div> </div>
+    </div>
+  </section>
 
-    <!-- Servicios -->
-    <section class="section" id="servicios">
-      <div class="container">
-        <h2 class="section__title">Nuestros Servicios</h2>
-        <p class="section__subtitle">Soluciones psicológicas adaptadas a tus necesidades</p>
-        <div class="cards">
-          <article class="card">
-            <div class="card__icon">💬</div>
-            <h3 class="card__title">Consultas Psicológicas</h3>
-            <p class="card__desc">Atención individual, de pareja y familiar. Modalidad presencial en Bogotá u online para toda Colombia.</p>
-            <ul class="card__list">
-              <li>Terapia individual</li>
-              <li>Terapia de pareja</li>
-              <li>Terapia infantil y adolescente</li>
-              <li>Online o presencial</li>
-            </ul>
-            <a href="https://wa.me/573000000000?text=Hola%2C%20quiero%20agendar%20una%20consulta%20psicol%C3%B3gica" class="btn btn--secondary" target="_blank" rel="noopener">Agendar ahora</a>
-          </article>
-          <article class="card">
-            <div class="card__icon">🧘</div>
-            <h3 class="card__title">Talleres</h3>
-            <p class="card__desc">Espacios de crecimiento personal y grupal. Aprende herramientas para manejar la ansiedad, el estrés y fortalecer tu autoestima.</p>
-            <ul class="card__list">
-              <li>Manejo de ansiedad y estrés</li>
-              <li>Autoestima y confianza</li>
-              <li>Habilidades sociales</li>
-              <li>Inteligencia emocional</li>
-            </ul>
-            <a href="https://wa.me/573000000000?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20talleres" class="btn btn--secondary" target="_blank" rel="noopener">Ver talleres</a>
-          </article>
-          <article class="card">
-            <div class="card__icon">🏢</div>
-            <h3 class="card__title">Seminarios Empresariales</h3>
-            <p class="card__desc">Programas de salud mental organizacional para empresas colombianas. Mejora el clima laboral y el bienestar de tu equipo.</p>
-            <ul class="card__list">
-              <li>Clima laboral y cultura organizacional</li>
-              <li>Liderazgo consciente</li>
-              <li>Manejo del estrés laboral</li>
-              <li>Prevención del burnout</li>
-            </ul>
-            <a href="https://wa.me/573000000000?text=Hola%2C%20quiero%20cotizar%20un%20seminario%20para%20mi%20empresa" class="btn btn--secondary" target="_blank" rel="noopener">Solicitar cotización</a>
-          </article>
+  <!-- ===== SERVICIOS (3D Cards) ===== -->
+  <section class="section" id="servicios">
+    <h2 data-aos="fade-up">💜 Nuestros servicios</h2>
+    <div class="row g-4 mt-3">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+        <div class="card-3d" style="min-height:250px;">
+          <span style="font-size:3rem;display:block;margin-bottom:1rem;">💬</span>
+          <h3>Consultas</h3>
+          <p>Individual, pareja, familiar y online. 50 min. Primera sesión gratis.</p>
+          <a href="https://wa.me/573000000000?text=Hola%2C%20quiero%20una%20consulta" class="glow-btn glow-btn--primary" style="display:inline-block;padding:10px 24px;font-size:0.85rem;margin-top:1rem;" target="_blank">Agendar</a>
         </div>
       </div>
-    </section>
-
-    <!-- Sobre mí preview -->
-    <section class="section section--alt">
-      <div class="container">
-        <div class="about-preview">
-          <div class="about-preview__text">
-            <h2>Tu bienestar en buenas manos</h2>
-            <p>Psicóloga profesional con más de 10 años de experiencia acompañando a personas y empresas en Colombia en su camino hacia el bienestar emocional.</p>
-            <a href="sobre-mi.html" class="btn btn--outline">Conoce más sobre mí →</a>
-          </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+        <div class="card-3d" style="min-height:250px;">
+          <span style="font-size:3rem;display:block;margin-bottom:1rem;">🧘</span>
+          <h3>Talleres</h3>
+          <p>Ansiedad, autoestima, habilidades sociales. Grupos reducidos. Presencial y online.</p>
+          <a href="https://wa.me/573000000000?text=Hola%2C%20quiero%20info%20sobre%20talleres" class="glow-btn glow-btn--secondary" style="display:inline-block;padding:10px 24px;font-size:0.85rem;margin-top:1rem;" target="_blank">Ver talleres</a>
         </div>
       </div>
-    </section>
-
-    <!-- Testimonios -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section__title">Lo que dicen mis pacientes</h2>
-        <div class="testimonials">
-          <div class="testimonial">
-            <p class="testimonial__text">"Desde que empecé mi proceso terapéutico, mi vida cambió completamente. Recomiendo este espacio con toda confianza."</p>
-            <p class="testimonial__author">— María C.</p>
-          </div>
-          <div class="testimonial">
-            <p class="testimonial__text">"El taller de manejo de ansiedad me dio herramientas que uso todos los días. Muy agradecido."</p>
-            <p class="testimonial__author">— Andrés P.</p>
-          </div>
-          <div class="testimonial">
-            <p class="testimonial__text">"Contratamos el seminario de salud mental para nuestra empresa. El impacto en el equipo fue inmediato."</p>
-            <p class="testimonial__author">— Laura M., RH</p>
-          </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="card-3d" style="min-height:250px;">
+          <span style="font-size:3rem;display:block;margin-bottom:1rem;">🏢</span>
+          <h3>Seminarios</h3>
+          <p>Salud mental empresarial. Clima laboral, liderazgo, burnout. Cubrimos toda Colombia.</p>
+          <a href="https://wa.me/573000000000?text=Hola%2C%20quiero%20cotizar%20un%20seminario" class="glow-btn glow-btn--primary" style="display:inline-block;padding:10px 24px;font-size:0.85rem;margin-top:1rem;" target="_blank">Cotizar</a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- CTA Final -->
-    <section class="section section--cta">
-      <div class="container">
-        <h2>Da el primer paso hacia tu bienestar</h2>
-        <p>Agenda tu primera consulta hoy. Estoy aquí para acompañarte.</p>
-        <a href="https://wa.me/573000000000?text=Hola%2C%20quiero%20agendar%20mi%20primera%20consulta" class="btn btn--primary btn--large" target="_blank" rel="noopener">
-          📱 Agenda tu primera consulta
-        </a>
+  <!-- ===== TESTIMONIOS ===== -->
+  <section class="section" id="testimonios">
+    <h2 data-aos="fade-up">💬 Lo que dicen nuestros pacientes</h2>
+    <div class="splide" id="psicologia-carousel" data-aos="fade-up">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide"><p style="font-size:2rem;">⭐</p><h3>Laura G.</h3><p style="font-size:0.9rem;">"Empecé por ansiedad y hoy siento que volví a vivir. La terapia online me cambió la vida."</p></li>
+          <li class="splide__slide"><p style="font-size:2rem;">⭐⭐</p><h3>Andrés P.</h3><p style="font-size:0.9rem;">"Los talleres de autoestima fueron exactamente lo que necesitaba. 100% recomendado."</p></li>
+          <li class="splide__slide"><p style="font-size:2rem;">⭐⭐⭐</p><h3>Carolina M.</h3><p style="font-size:0.9rem;">"Profesionalismo y calidez humana. Mi hija adolescente encontró un espacio seguro."</p></li>
+        </ul>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
 
-  <footer class="footer">
+  <!-- ===== CTA ===== -->
+  <section class="section text-center pb-5">
+    <div data-aos="fade-up">
+      <h2 style="font-size:clamp(2rem,5vw,3rem);">💜 Tu bienestar empieza hoy</h2>
+      <p style="color:rgba(255,255,255,0.6);max-width:500px;margin:1rem auto 2rem;">No esperes a que sea demasiado tarde. Cuidar tu salud mental es el mejor regalo que puedes hacerte.</p>
+      <a href="https://wa.me/573000000000?text=Hola%2C%20quiero%20agendar%20mi%20primera%20consulta%20gratis" class="glow-btn glow-btn--primary" style="font-size:1.2rem;padding:18px 50px;" target="_blank">
+        💬 Primera sesión gratis
+      </a>
+    </div>
+  </section>
+
+  <!-- Confetti -->
+  <button class="confetti-btn" id="confettiBtn" title="💜">💜</button>
+
+  <footer>
     <div class="container">
-      <div class="footer__grid">
-        <div>
-          <h4>PsicoVida Colombia</h4>
-          <ul>
-            <li>📍 Bogotá, Colombia</li>
-            <li>📞 <a href="https://wa.me/573000000000">+57 300 000 0000</a></li>
-            <li>📧 contacto@psicovidacolombia.com</li>
-          </ul>
-        </div>
-        <div>
-          <h4>Servicios</h4>
-          <ul>
-            <li><a href="servicios.html#consultas">Consultas</a></li>
-            <li><a href="servicios.html#talleres">Talleres</a></li>
-            <li><a href="servicios.html#seminarios">Seminarios</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Enlaces</h4>
-          <ul>
-            <li><a href="sobre-mi.html">Sobre mí</a></li>
-            <li><a href="blog/">Blog</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer__bottom">
-        <p>© 2026 PsicoVida Colombia. Todos los derechos reservados.</p>
-      </div>
+      <p>© 2026 <strong>PsicoVida Colombia</strong> — Bogotá · Medellín · Cali</p>
     </div>
   </footer>
 
-  <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/573000000000?text=Hola%2C%20quiero%20agendar%20una%20consulta%20psicol%C3%B3gica"
-     class="whatsapp-float"
-     target="_blank"
-     rel="noopener"
-     aria-label="Contactar por WhatsApp">
-    💬
-  </a>
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/js/splide.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3/dist/confetti.min.js"></script>
 
-  <script src="js/main.js"></script>
   <script>
-  // p5.js ambient background — green particles
-  new p5((p) => {
-    let particles = [];
-    p.setup = function() {
-      let canvas = p.createCanvas(p.windowWidth, p.windowHeight);
-      canvas.parent('p5-bg');
-      p.colorMode(p.RGB, 255);
-      p.noStroke();
-      for (let i = 0; i < 40; i++) {
-        particles.push({
-          x: p.random(p.width), y: p.random(p.height),
-          vx: 0, vy: 0,
-          size: p.random(2, 4),
-          alpha: p.random(0.02, 0.06),
-        });
-      }
-    };
-    p.draw = function() {
-      p.clear();
-      let t = p.frameCount * 0.0005;
-      for (let pt of particles) {
-        let angle = p.noise(pt.x * 0.005, pt.y * 0.005, t) * p.TWO_PI * 2;
-        pt.vx += p.cos(angle) * 0.08;
-        pt.vy += p.sin(angle) * 0.08;
-        pt.vx *= 0.96; pt.vy *= 0.96;
-        pt.x += pt.vx; pt.y += pt.vy;
-        if (pt.x < 0) pt.x = p.width;
-        if (pt.x > p.width) pt.x = 0;
-        if (pt.y < 0) pt.y = p.height;
-        if (pt.y > p.height) pt.y = 0;
-        p.fill(102, 0, 255, pt.alpha * 255);
-        p.circle(pt.x, pt.y, pt.size);
-      }
-    };
-    p.windowResized = function() { p.resizeCanvas(p.windowWidth, p.windowHeight); };
-  }, 'p5-bg');
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "PsicoVida Colombia",
-    "description": "Servicios psicológicos en Colombia: consultas, talleres y seminarios empresariales",
-    "url": "https://alejoatzel1423.github.io/web-psicologia/",
-    "telephone": "+57 300 000 0000",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Bogotá",
-      "addressCountry": "CO"
-    },
-    "serviceType": ["Psychological Counseling", "Workshop", "Seminar"],
-    "areaServed": "Colombia",
-    "priceRange": "$"
-  }
+  // Three.js
+  (function() {
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    document.getElementById('three-canvas').appendChild(renderer.domElement);
+
+    const shapes = [];
+    const colors = [0x6600FF, 0x00E5FF, 0x8833ff, 0x33d9ff];
+
+    for (let i = 0; i < 12; i++) {
+      const geometry = i % 3 === 0 ? new THREE.OctahedronGeometry(0.3, 0) :
+                      i % 3 === 1 ? new THREE.TorusGeometry(0.3, 0.12, 12, 24) :
+                                    new THREE.IcosahedronGeometry(0.25, 0);
+
+      const material = new THREE.MeshPhysicalMaterial({
+        color: colors[i % colors.length],
+        metalness: 0.4,
+        roughness: 0.1,
+        transparent: true,
+        opacity: 0.2,
+        wireframe: i % 2 === 0,
+        emissive: colors[i % colors.length],
+        emissiveIntensity: 0.1,
+      });
+
+      const mesh = new THREE.Mesh(geometry, material);
+      mesh.position.set(
+        (Math.random() - 0.5) * 14,
+        (Math.random() - 0.5) * 10,
+        (Math.random() - 0.5) * 12 - 4
+      );
+      mesh.rotation.set(Math.random() * Math.PI, Math.random() * Math.PI, 0);
+      mesh.userData = {
+        rotX: (Math.random() - 0.5) * 0.008,
+        rotY: (Math.random() - 0.5) * 0.008,
+        floatAmp: 0.1 + Math.random() * 0.4,
+        floatSpeed: 0.3 + Math.random() * 0.6,
+        initialY: mesh.position.y,
+      };
+      scene.add(mesh);
+      shapes.push(mesh);
+    }
+
+    camera.position.z = 10;
+
+    function animate() {
+      requestAnimationFrame(animate);
+      const time = Date.now() * 0.001;
+      shapes.forEach((mesh) => {
+        mesh.rotation.x += mesh.userData.rotX;
+        mesh.rotation.y += mesh.userData.rotY;
+        mesh.position.y = mesh.userData.initialY + Math.sin(time * mesh.userData.floatSpeed) * mesh.userData.floatAmp;
+      });
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+  })();
+
+  // GSAP Hero
+  gsap.from('.gsap-title span', {
+    y: 80, opacity: 0, duration: 1, stagger: 0.2, ease: 'power4.out'
+  });
+
+  // Lenis
+  const lenis = new Lenis({ duration: 1.2 });
+  lenis.on('scroll', ScrollTrigger.update);
+  gsap.ticker.add((time) => lenis.raf(time * 1000));
+
+  // Splide
+  new Splide('#psicologia-carousel', {
+    type: 'loop', perPage: 2, gap: '1.5rem',
+    autoplay: true, interval: 3500,
+    breakpoints: { 768: { perPage: 1 } },
+  }).mount();
+
+  // AOS
+  AOS.init({ duration: 800, once: true });
+
+  // CountUp
+  document.querySelectorAll('.countup').forEach((el) => {
+    const target = parseInt(el.dataset.target);
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          let current = 0;
+          const step = Math.ceil(target / 60);
+          const timer = setInterval(() => {
+            current += step;
+            if (current >= target) { current = target; clearInterval(timer); }
+            el.textContent = current + '+';
+          }, 30);
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    observer.observe(el);
+  });
+
+  // Confetti
+  document.getElementById('confettiBtn').addEventListener('click', () => {
+    confetti({ spread: 360, ticks: 100, particleCount: 60, colors: ['#6600FF', '#00E5FF', '#fff', '#FF69B4'] });
+  });
   </script>
 </body>
 </html>
